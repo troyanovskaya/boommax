@@ -8,7 +8,7 @@ import { LogoComponent } from './components/lg-panel/logo/logo.component';
 import { LanguageComponent } from './components/lg-panel/language/language.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-//import { MatCarouselModule } from '@ngmodule/material-carousel';
+import { MatCarouselModule } from '@ngmodule/material-carousel';
 //import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 @NgModule({
   declarations: [
@@ -21,7 +21,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
   imports: [
     AppRoutingModule,
     BrowserModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    //MatCarouselModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]
