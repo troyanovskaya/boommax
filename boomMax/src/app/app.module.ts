@@ -8,21 +8,27 @@ import { LogoComponent } from './components/lg-panel/logo/logo.component';
 import { LanguageComponent } from './components/lg-panel/language/language.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatCarouselModule } from '@ngmodule/material-carousel';
-//import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { SliderComponent } from './components/slider/slider.component';
+import { ContentComponent } from './components/content/content.component';
+import { HeadingDescriptionComponent } from './components/heading-description/heading-description.component';
+import { ContentListComponent } from './components/content-list/content-list.component';
+
 @NgModule({
   declarations: [
     AppComponent,
     LgPanelComponent,
     LogoComponent,
     LanguageComponent,
-    FooterComponent
+    FooterComponent,
+    SliderComponent,
+    ContentComponent,
+    HeadingDescriptionComponent,
+    ContentListComponent
   ],
   imports: [
     AppRoutingModule,
     BrowserModule,
-    BrowserAnimationsModule,
-    //MatCarouselModule.forRoot()
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
