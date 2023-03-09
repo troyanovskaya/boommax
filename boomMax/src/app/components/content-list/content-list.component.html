@@ -1,6 +1,10 @@
 <div class="content-list-container">
-  <h3>{{contentWord}}</h3>
-  <div *ngFor="let text of content">
-    <a href="#{{text.id}}">{{text.title}}</a>
+  <div class="list-container">
+    <div *ngFor="let text of textService.content">
+      <div class="list-item">
+        <a href="#{{text.id}}">{{text.title}}</a>
+      </div>
+    </div>
   </div>
+  <a class="catalog">{{textService.catalogName}}</a>
 </div>

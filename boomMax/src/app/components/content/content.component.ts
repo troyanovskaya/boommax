@@ -7,9 +7,7 @@ import { TextLgService } from 'src/app/services/text-lg.service';
   styleUrls: ['./content.component.sass']
 })
 export class ContentComponent implements OnInit {
-  content?:{id:string, title:string, text: string}[];
-  constructor(private textService: TextLgService){}
+  constructor(public textService: TextLgService){}
   ngOnInit(): void {
-    this.content = this.textService.getContent();
   }
 }

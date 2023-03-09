@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { TextLgService } from 'src/app/services/text-lg.service';
 
 @Component({
   selector: 'app-lg-panel',
@@ -7,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LgPanelComponent implements OnInit {
 
-  constructor() { }
+  constructor(public textService:TextLgService) { }
 
   ngOnInit(): void {
   }

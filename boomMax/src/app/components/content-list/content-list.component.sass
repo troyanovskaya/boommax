@@ -1,11 +1,46 @@
 .content-list-container
-  margin: 80px
-  h3
-    font-size: 2em
-  a
-    font-size: 1.5em
-    margin:20px
-    line-height: 1.5em
-    color: black
-    text-decoration: none
+  position: sticky
+  top: 0
+  z-index: 2
+  box-sizing: border-box
+  width:100%
+  padding: 20px
+  background-color: #4cb050
+  min-height: 50px
+  display: flex
+  flex-direction: row
+  justify-content: space-between
+  align-items: center
+  .list-container
+    box-sizing: border-box
+    display: flex
+    flex-direction: row
+    gap: 40px
+    flex-wrap: wrap
+    .list-item
+      padding: 10px
+      border-left: 3px solid white
+      border-right: 3px solid white
+      border-top: 3px solid #4cb050
+      border-bottom: 3px solid #4cb050
+      &:hover
+        border-top: 3px solid white
+        border-bottom: 3px solid white
+  .catalog
+    padding: 10px
+    border: 4px solid #2b2a28
+    background-color: #2b2a28
+    transition: transform .2s
+    &:hover
+      transform: scale(1.1)
+
+
+
+
+a
+  text-decoration: none
+  color: white
+  font-size: 2em
+
+
 

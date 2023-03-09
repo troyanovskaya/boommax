@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { TextLgService } from 'src/app/services/text-lg.service';
 
 @Component({
   selector: 'app-language',
@@ -6,12 +7,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./language.component.sass']
 })
 export class LanguageComponent implements OnInit {
-  mainLanguage:string = 'ukr'
+  mainLanguage:string = 'UKR'
 
-  constructor() { }
+  constructor(private textService: TextLgService) { }
   changeLanguage(language:string){
     if (language!==this.mainLanguage){
       this.mainLanguage = language;
+      this.textService.changeLg(this.mainLanguage)
     }
 
   }

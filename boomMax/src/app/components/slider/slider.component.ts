@@ -1,12 +1,5 @@
 import { Component, Input, OnDestroy, OnInit } from '@angular/core';
-import {
-  interval,
-  Observable,
-  startWith,
-  Subject,
-  switchMap,
-  timer,
-} from 'rxjs';
+
 import {SlideInterface} from '../../schemas/imgSlider'
 @Component({
   selector: 'app-slider',
@@ -18,6 +11,7 @@ export class SliderComponent implements OnInit, OnDestroy {
 
   currentIndex: number = 0;
   timeoutId?: number;
+  mainDot:number = 0
 
   ngOnInit(): void {
     this.resetTimer();
@@ -40,6 +34,7 @@ export class SliderComponent implements OnInit, OnDestroy {
 
     this.resetTimer();
     this.currentIndex = newIndex;
+    this.mainDot = newIndex;
   }
 
   goToNext(): void {
@@ -48,11 +43,13 @@ export class SliderComponent implements OnInit, OnDestroy {
 
     this.resetTimer();
     this.currentIndex = newIndex;
+    this.mainDot = newIndex;
   }
 
   goToSlide(slideIndex: number): void {
     this.resetTimer();
     this.currentIndex = slideIndex;
+    this.mainDot = slideIndex;
   }
 
   getCurrentSlideUrl() {

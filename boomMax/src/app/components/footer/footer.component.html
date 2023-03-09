@@ -1,1 +1,10 @@
-<footer id="id" class="footer-container"></footer>
+<footer class="footer-container">
+  <app-logo></app-logo>
+  <div *ngFor="let item of textService.footerContent; let i = index">
+    <h4>{{item.title}}</h4>
+    <div *ngFor="let c of item.content">
+      <p *ngIf="i!=0">{{c}}</p>
+      <a *ngIf="i==0" href="tel: {{c}}">{{c}}</a>
+    </div>
+  </div>
+</footer>

@@ -1,7 +1,18 @@
 <div class="content-container">
-  <div *ngFor="let par of content">
-    <h4 id="{{par.id}}">{{par.title}}</h4>
-    <p>{{par.text}}</p>
+  <div id="{{par.id}}" *ngFor="let par of textService.content; let i = index">
+    <h4 >{{par.title}}</h4>
+    <div class="text-img">
+      <div class="text">
+        <div class="img">
+          <img src="{{textService.img[i]}}" alt="img {{i}}">
+        </div>
+        <div *ngFor="let p1 of par.text">
+          <p>{{p1}}</p>
+        </div>
+      </div>
+    </div>
   </div>
+  <h3>{{textService.findUs}}</h3>
+  <app-map-block></app-map-block>
 </div>
 

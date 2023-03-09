@@ -1,17 +1,39 @@
 $green : #4cb050
 
 .language-container
+  font-size: 1.5em
   display: flex
-  flex-direction: column
-  justify-content: center
-  text-align: center
+  flex-direction: row
   color: white
   gap: 10px
+  align-items: center
   text-shadow: 1px 1px 2px black
+  .ukr
+    &:before
+        content: ''
+        display: inline-block
+        border-radius: 15px
+        border-right-color: #f7ce00
+        border-top-color: #0058b5
+        border-bottom-color: #f7ce00
+        border-left-color: #0058b5
+        transform: rotate(45deg)
+        border-width: 10px
+        border-style: solid
+        height: 0px
+        width: 0px
   .main-lg
-    font-size: 1.1em
-    border: 3px dashed white
+    background-color: white
+    color: black
+  .lg
     border-radius: 10px
     padding: 10px
-    background-color: black
+    transition: transform .3s
+    cursor: pointer
+    display: flex
+    flex-direction: row
+    align-items: flex-end
+    gap:10px
+    &:hover
+      transform: scale(1.1)
 

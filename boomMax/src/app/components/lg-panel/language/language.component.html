@@ -1,5 +1,6 @@
 <div class="language-container">
-  <div (click)="changeLanguage('ukr')" [ngClass]="{'main-lg': mainLanguage==='ukr'}">UKR</div>
-  <div (click)="changeLanguage('rus')" [ngClass]="{'main-lg': mainLanguage==='rus'}">RUS</div>
+  <div class="lg ukr" (click)="changeLanguage('UKR')" [ngClass]="{'main-lg': mainLanguage==='UKR'}">UKR</div>
+  <div>|</div>
+  <div class="lg rus" (click)="changeLanguage('RUS')" [ngClass]="{'main-lg': mainLanguage==='RUS'}">RUS</div>
 </div>
 

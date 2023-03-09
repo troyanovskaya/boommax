@@ -4,14 +4,14 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LgPanelComponent } from './components/lg-panel/lg-panel.component';
-import { LogoComponent } from './components/lg-panel/logo/logo.component';
+import { LogoComponent } from './components/logo/logo.component';
 import { LanguageComponent } from './components/lg-panel/language/language.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SliderComponent } from './components/slider/slider.component';
 import { ContentComponent } from './components/content/content.component';
-import { HeadingDescriptionComponent } from './components/heading-description/heading-description.component';
 import { ContentListComponent } from './components/content-list/content-list.component';
+import { MapBlockComponent } from './components/map-block/map-block.component';
 
 @NgModule({
   declarations: [
@@ -22,8 +22,8 @@ import { ContentListComponent } from './components/content-list/content-list.com
     FooterComponent,
     SliderComponent,
     ContentComponent,
-    HeadingDescriptionComponent,
-    ContentListComponent
+    ContentListComponent,
+    MapBlockComponent
   ],
   imports: [
     AppRoutingModule,
