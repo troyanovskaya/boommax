@@ -7,6 +7,10 @@ import { TextLgService } from 'src/app/services/text-lg.service';
   styleUrls: ['./content-list.component.sass']
 })
 export class ContentListComponent implements OnInit{
+  showMenu: boolean = false
+  changeMenuState(){
+    this.showMenu = !this.showMenu
+  }
 
 
   constructor(public textService: TextLgService){}

@@ -1,0 +1,23 @@
+<div class="content-container">
+  <div class="main-content">
+    <div id="{{textService.contactsAddress.id}}">
+      <h4 >{{textService.contactsAddress.title}}</h4>
+      <div class="text-img">
+        <div class="text">
+          <div class="img">
+            <img src="{{textService.contactsAddress.img}}" alt="img {{3}}">
+          </div>
+          <div *ngFor="let p1 of textService.contactsAddress.text">
+            <p>{{p1}}</p>
+          </div>
+          <div><p>{{textService.email}}</p></div>
+          <div *ngFor="let phone of textService.allPhones">
+            <p><a  href="tel: {{phone}}">{{phone}}</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <h3>{{textService.findUs}}</h3>
+  <app-map-block></app-map-block>
+</div>

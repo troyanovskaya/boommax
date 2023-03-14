@@ -1,5 +1,7 @@
 <footer class="footer-container">
-  <app-logo></app-logo>
+  <div class="logo-container">
+    <app-logo></app-logo>
+  </div>
   <div *ngFor="let item of textService.footerContent; let i = index">
     <h4>{{item.title}}</h4>
     <div *ngFor="let c of item.content">

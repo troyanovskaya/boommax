@@ -1,10 +1,37 @@
 <div class="content-list-container">
   <div class="list-container">
-    <div *ngFor="let text of textService.content">
+    <div>
+      <div class="list-item">
+        <a href="#">{{textService.catalogName}}</a>
+      </div>
+    </div>
+    <div class="list" *ngFor="let text of textService.content">
+      <div class="pipe">|</div>
       <div class="list-item">
         <a href="#{{text.id}}">{{text.title}}</a>
       </div>
+
+    </div>
+    <div>
+      <div class="list-item">
+        <a href="#{{textService.news.id}}">{{textService.news.newName}}</a>
+      </div>
     </div>
   </div>
-  <a class="catalog">{{textService.catalogName}}</a>
+
+  <!-- Menu for screensize < 1100px  -->
+  <div class="burger-container" (click)="changeMenuState()">
+    <div class="burger-border">
+      <img class="burger-img" src="assets/burger.png" alt="burger">
+    </div>
+  </div>
+  <div *ngIf="showMenu" class="menu-container">
+    <a class="list-item" href="#" (click)="changeMenuState()">{{textService.catalogName}}</a>
+    <a class="list-item" href="#{{text.id}}" (click)="changeMenuState()" *ngFor="let text of textService.content; let i = index">
+      {{text.title}}
+    </a>
+    <a class="list-item" href="#{{textService.news.id}}">{{textService.news.newName}}</a>
+
+  </div>
+
 </div>

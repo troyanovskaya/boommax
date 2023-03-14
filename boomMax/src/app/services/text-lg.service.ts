@@ -1,4 +1,6 @@
 import { Injectable } from '@angular/core';
+import { ContentItem } from '../schemas/ContentItem';
+import { New } from '../schemas/New';
 
 @Injectable({
   providedIn: 'root'
@@ -8,48 +10,134 @@ export class TextLgService {
   language_ukr:string = 'UKR';
   language_rus:string = 'RUS';
 
-  catalogName: string = 'Каталог товарів';
-  catalogName_ukr: string = 'Каталог товарів';
-  catalogName_rus: string = 'Каталог товаров';
+  catalogName: string = 'Каталог';
+  catalogName_ukr: string = 'Каталог';
+  catalogName_rus: string = 'Каталог';
 
   findUs: string = 'Знайдіть нас тут:';
   findUs_ukr: string = 'Знайдіть нас тут:';
   findUs_rus: string = 'Найдите нас тут:';
 
-  content:{id:string, title: string, text: string[]}[] = [{id:'about', title: 'Про компанію', text: [`Lorem ipsum, dolor sit amet consectetur adipisicing elit. Totam, nobis? Hic tempora aut veniam non sit libero quam rerum magnam eius nisi cupiditate molestias perspiciatis laborum minus ea enim nihil, officiis quibusdam consequatur in. Esse nisi placeat id sed harum, quos neque laboriosam cumque voluptatum dolores iure molestias alias repellat exercitationem ex cupiditate sint reiciendis aliquam sit accusamus ipsum adipisci similique libero odio? Eaque voluptates vitae excepturi sunt. Laudantium repudiandae ipsum eius est eligendi nulla pariatur optio ut magnam alias nesciunt, debitis officiis, voluptatibus voluptatum dolore esse maxime quis corrupti modi aperiam in quae accusantium. Sunt nulla necessitatibus fuga. Molestiae!`]},
-  {id:'delivery', title: 'Умови доставки та оплати', text: ['   sdfghjgytrewedfghf', `Lorem ipsum, dolor sit amet consectetur adipisicing elit. Totam, nobis? Hic tempora aut veniam non sit libero quam rerum magnam eius nisi cupiditate molestias perspiciatis laborum minus ea enim nihil, officiis quibusdam consequatur in. Esse nisi placeat id sed harum, quos neque laboriosam cumque voluptatum dolores iure molestias alias repellat exercitationem ex cupiditate sint reiciendis aliquam sit accusamus ipsum adipisci similique libero odio? Eaque voluptates vitae excepturi sunt. Laudantium repudiandae ipsum eius est eligendi nulla pariatur optio ut magnam alias nesciunt, debitis officiis, voluptatibus voluptatum dolore esse maxime quis corrupti modi aperiam in quae accusantium. Sunt nulla necessitatibus fuga. Molestiae!`]},
-  {id:'news', title: 'Новини', text: [`Lorem ipsum, dolor sit amet consectetur adipisicing elit. Totam, nobis? Hic tempora aut veniam non sit libero quam rerum magnam eius nisi cupiditate molestias perspiciatis laborum minus ea enim nihil, officiis quibusdam consequatur in. Esse nisi placeat id sed harum, quos neque laboriosam cumque voluptatum dolores iure molestias alias repellat exercitationem ex cupiditate sint reiciendis aliquam sit accusamus ipsum adipisci similique libero odio? Eaque voluptates vitae excepturi sunt. Laudantium repudiandae ipsum eius est eligendi nulla pariatur optio ut magnam alias nesciunt, debitis officiis, voluptatibus voluptatum dolore esse maxime quis corrupti modi aperiam in quae accusantium. Sunt nulla necessitatibus fuga. Molestiae!`]},
-  {id:'contacts', title: 'Контакти та адреса', text: [`Lorem ipsum, dolor sit amet consectetur adipisicing elit. Totam, nobis? Hic tempora aut veniam non sit libero quam rerum magnam eius nisi cupiditate molestias perspiciatis laborum minus ea enim nihil, officiis quibusdam consequatur in. Esse nisi placeat id sed harum, quos neque laboriosam cumque voluptatum dolores iure molestias alias repellat exercitationem ex cupiditate sint reiciendis aliquam sit accusamus ipsum adipisci similique libero odio? Eaque voluptates vitae excepturi sunt. Laudantium repudiandae ipsum eius est eligendi nulla pariatur optio ut magnam alias nesciunt, debitis officiis, voluptatibus voluptatum dolore esse maxime quis corrupti modi aperiam in quae accusantium. Sunt nulla necessitatibus fuga. Molestiae!`]}];
+  address: string[] = ['вул. Херсонське Шосе, 51', 'вул. Маріупольська, 44к.8'];
+  address_ukr: string[] = ['вул. Херсонське Шосе, 51', 'вул. Маріупольська, 44к.8'];
+  address_rus: string[] = [' ул. Херсонское Шоссе, 51', 'ул. Мариупольская, 44к.8'];
 
-  content_ukr:{id:string, title: string, text: string[]}[] = [{id:'about', title: 'Про компанію', text: [`Lorem ipsum, dolor sit amet consectetur adipisicing elit. Totam, nobis? Hic tempora aut veniam non sit libero quam rerum magnam eius nisi cupiditate molestias perspiciatis laborum minus ea enim nihil, officiis quibusdam consequatur in. Esse nisi placeat id sed harum, quos neque laboriosam cumque voluptatum dolores iure molestias alias repellat exercitationem ex cupiditate sint reiciendis aliquam sit accusamus ipsum adipisci similique libero odio? Eaque voluptates vitae excepturi sunt. Laudantium repudiandae ipsum eius est eligendi nulla pariatur optio ut magnam alias nesciunt, debitis officiis, voluptatibus voluptatum dolore esse maxime quis corrupti modi aperiam in quae accusantium. Sunt nulla necessitatibus fuga. Molestiae!`]},
-  {id:'delivery', title: 'Умови доставки та оплати', text: ['Lorem ipsum, dolor sit amet consectetur adipisicing elit. Totam, nobis? Hic tempora aut veniam non sit libero quam rerum magnam eius nisi cupiditate molestias perspiciatis laborum minus ea enim nihil, officiis quibusdam consequatur in. Esse nisi placeat id sed harum, quos neque laboriosam cumque voluptatum dolores iure molestias alias repellat exercitationem ex cupiditate sint reiciendis aliquam sit accusamus ipsum adipisci similique libero odio? Eaque voluptates vitae excepturi sunt. Laudantium repudiandae ipsum eius est eligendi nulla pariatur optio ut magnam alias nesciunt, debitis officiis, voluptatibus voluptatum dolore esse maxime quis corrupti modi aperiam in quae accusantium.', `Lorem ipsum, dolor sit amet consectetur adipisicing elit. Totam, nobis? Hic tempora aut veniam non sit libero quam rerum magnam eius nisi cupiditate molestias perspiciatis laborum minus ea enim nihil, officiis quibusdam consequatur in. Esse nisi placeat id sed harum, quos neque laboriosam cumque voluptatum dolores iure molestias alias repellat exercitationem ex cupiditate sint reiciendis aliquam sit accusamus ipsum adipisci similique libero odio? Eaque voluptates vitae excepturi sunt. Laudantium repudiandae ipsum eius est eligendi nulla pariatur optio ut magnam alias nesciunt, debitis officiis, voluptatibus voluptatum dolore esse maxime quis corrupti modi aperiam in quae accusantium. Sunt nulla necessitatibus fuga. Molestiae!`]},
-  {id:'news', title: 'Новини', text: [`Lorem ipsum, dolor sit amet consectetur adipisicing elit. Totam, nobis? Hic tempora aut veniam non sit libero quam rerum magnam eius nisi cupiditate molestias perspiciatis laborum minus ea enim nihil, officiis quibusdam consequatur in. Esse nisi placeat id sed harum, quos neque laboriosam cumque voluptatum dolores iure molestias alias repellat exercitationem ex cupiditate sint reiciendis aliquam sit accusamus ipsum adipisci similique libero odio? Eaque voluptates vitae excepturi sunt. Laudantium repudiandae ipsum eius est eligendi nulla pariatur optio ut magnam alias nesciunt, debitis officiis, voluptatibus voluptatum dolore esse maxime quis corrupti modi aperiam in quae accusantium. Sunt nulla necessitatibus fuga. Molestiae!`]},
-  {id:'contacts', title: 'Контакти та адреса', text: [`Lorem ipsum, dolor sit amet consectetur adipisicing elit. Totam, nobis? Hic tempora aut veniam non sit libero quam rerum magnam eius nisi cupiditate molestias perspiciatis laborum minus ea enim nihil, officiis quibusdam consequatur in. Esse nisi placeat id sed harum, quos neque laboriosam cumque voluptatum dolores iure molestias alias repellat exercitationem ex cupiditate sint reiciendis aliquam sit accusamus ipsum adipisci similique libero odio? Eaque voluptates vitae excepturi sunt. Laudantium repudiandae ipsum eius est eligendi nulla pariatur optio ut magnam alias nesciunt, debitis officiis, voluptatibus voluptatum dolore esse maxime quis corrupti modi aperiam in quae accusantium. Sunt nulla necessitatibus fuga. Molestiae!`]}];
+  content:ContentItem[] = [{id:'about', title: 'Про компанію', img: 'assets/img_1.jpg', text:
+  [`Буммакс - це компанія, яка вже більше 10 років працює на ринку канцелярських товарів та паперу у місті Миколаїв. Ми пишаємося своїм досвідом роботи з оптовими, роздрібними та корпоративними клієнтами і завжди готові запропонувати якісні товари та високий рівень сервісу. `,
+   'Наш асортимент включає широкий вибір канцелярських товарів, паперу, зошитів, папок, ручок, олівців та багато іншого. Ми працюємо лише з перевіреними постачальниками і гарантуємо високу якість всіх наших товарів.',
+   'Однією з наших головних переваг є безкоштовна доставка замовлень на суму понад 1500 грн у місті Миколаєві. Ми також пропонуємо можливість самовивозу з нашого магазину, що є зручним варіантом для наших місцевих клієнтів.',
+   'Крім великого асортименту продукції та доступних цін, нашім головним пріоритетом є задоволення потреб та очікувань клієнтів. Тому наш персонал складається з професіоналів, які завжди готові надати якісну консультацію та допомогти з вибором товарів.',
+   'Ми розуміємо, що зручність та комфорт клієнта - це один з головних аспектів успішної роботи, тому наш персонал завжди дружелюбний та ввічливий. Ми з радістю відповімо на будь-які ваші запитання та допоможемо з вибором найбільш відповідного товару.',
+   'Наші співробітники проходять регулярні тренінги, щоб бути в курсі всіх новинок ринку та завжди допомагати клієнтам з розумінням та вмінням. Ми завжди раді бачити вас та зробимо все можливе, щоб ваше побажання було виконано.',
+   'Обираючи Буммакс, ви отримуєте не тільки товари високої якості та відмінний сервіс, але й нових друзів та партнерів. Ми завжди раді допомогти та консультувати вас щодо вибору товарів, а також ділитися корисними порадами та ідеями для вашого бізнесу чи дому. Багато наших клієнтів вже стали не просто покупцями, а добрими друзями та постійними партнерами, з якими ми ділимось не тільки товаром, а й позитивною енергією та дружніми стосунками.']},
+  {id:'delivery', title: 'Доставка та оплата', img: 'assets/img_2.jpg', text:
+  ['Замовляючи товари , ви можете бути впевнені, що ваше замовлення буде доставлено швидко та якісно. Ми пропонуємо безкоштовну доставку по місту Миколаєві при замовленні на суму від 1500 грн.',
+   `Наша команда кур'єрів здійснює доставку замовлень щоденно з 10:00 до 17:00 в будні дні (понеділок - п'ятниця). Ми зробимо все можливе, щоб доставити ваше замовлення протягом 1-2 робочих днів з моменту оформлення.`,
+  'Ми приймаємо оплату товарів різними зручними способами, щоб зробити процес покупки максимально комфортним для вас.  Ми гарантуємо безпеку та конфіденційність оплати.',
+  'Вибираючи нас, ви можете бути впевнені, що отримаєте високоякісний сервіс та комфортні умови покупки. Зробіть замовлення прямо зараз та переконайтеся в цьому самі!']},
+  ];
 
-  content_rus:{id:string, title: string, text: string[]}[] = [{id:'about', title: 'Про компанию', text: [`Lorem ipsum, dolor sit amet consectetur adipisicing elit. Totam, nobis? Hic tempora aut veniam non sit libero quam rerum magnam eius nisi cupiditate molestias perspiciatis laborum minus ea enim nihil, officiis quibusdam consequatur in. Esse nisi placeat id sed harum, quos neque laboriosam cumque voluptatum dolores iure molestias alias repellat exercitationem ex cupiditate sint reiciendis aliquam sit accusamus ipsum adipisci similique libero odio? Eaque voluptates vitae excepturi sunt. Laudantium repudiandae ipsum eius est eligendi nulla pariatur optio ut magnam alias nesciunt, debitis officiis, voluptatibus voluptatum dolore esse maxime quis corrupti modi aperiam in quae accusantium. Sunt nulla necessitatibus fuga. Molestiae!`, `Lorem ipsum, dolor sit amet consectetur adipisicing elit. Totam, nobis? Hic tempora aut veniam non sit libero quam rerum magnam eius nisi cupiditate molestias perspiciatis laborum minus ea enim nihil, officiis quibusdam consequatur in. Esse nisi placeat id sed harum, quos neque laboriosam cumque voluptatum dolores iure molestias alias repellat exercitationem ex cupiditate sint reiciendis aliquam sit accusamus ipsum adipisci similique libero odio? Eaque voluptates vitae excepturi sunt. Laudantium repudiandae ipsum eius est eligendi nulla pariatur optio ut magnam alias nesciunt, debitis officiis, voluptatibus voluptatum dolore esse maxime quis corrupti modi aperiam in quae accusantium.`]},
-  {id:'delivery', title: 'Условия доставки и оплаты', text: [`Lorem ipsum, dolor sit amet consectetur adipisicing elit. Totam, nobis? Hic tempora aut veniam non sit libero quam rerum magnam eius nisi cupiditate molestias perspiciatis laborum minus ea enim nihil, officiis quibusdam consequatur in. Esse nisi placeat id sed harum, quos neque laboriosam cumque voluptatum dolores iure molestias alias repellat exercitationem ex cupiditate sint reiciendis aliquam sit accusamus ipsum adipisci similique libero odio? Eaque voluptates vitae excepturi sunt. Laudantium repudiandae ipsum eius est eligendi nulla pariatur optio ut magnam alias nesciunt, debitis officiis, voluptatibus voluptatum dolore esse maxime quis corrupti modi aperiam in quae accusantium. Sunt nulla necessitatibus fuga. Molestiae!`]},
-  {id:'news', title: 'Новости', text: [`Lorem ipsum, dolor sit amet consectetur adipisicing elit. Totam, nobis? Hic tempora aut veniam non sit libero quam rerum magnam eius nisi cupiditate molestias perspiciatis laborum minus ea enim nihil, officiis quibusdam consequatur in. Esse nisi placeat id sed harum, quos neque laboriosam cumque voluptatum dolores iure molestias alias repellat exercitationem ex cupiditate sint reiciendis aliquam sit accusamus ipsum adipisci similique libero odio? Eaque voluptates vitae excepturi sunt. Laudantium repudiandae ipsum eius est eligendi nulla pariatur optio ut magnam alias nesciunt, debitis officiis, voluptatibus voluptatum dolore esse maxime quis corrupti modi aperiam in quae accusantium. Sunt nulla necessitatibus fuga. Molestiae!`]},
-  {id:'contacts', title: 'Контакты и адрес', text: [`Lorem ipsum, dolor sit amet consectetur adipisicing elit. Totam, nobis? Hic tempora aut veniam non sit libero quam rerum magnam eius nisi cupiditate molestias perspiciatis laborum minus ea enim nihil, officiis quibusdam consequatur in. Esse nisi placeat id sed harum, quos neque laboriosam cumque voluptatum dolores iure molestias alias repellat exercitationem ex cupiditate sint reiciendis aliquam sit accusamus ipsum adipisci similique libero odio? Eaque voluptates vitae excepturi sunt. Laudantium repudiandae ipsum eius est eligendi nulla pariatur optio ut magnam alias nesciunt, debitis officiis, voluptatibus voluptatum dolore esse maxime quis corrupti modi aperiam in quae accusantium. Sunt nulla necessitatibus fuga. Molestiae!`]}];
+  content_ukr:ContentItem[] = [{id:'about', title: 'Про компанію', img: 'assets/img_1.jpg', text:
+  [`Буммакс - це компанія, яка вже більше 10 років працює на ринку канцелярських товарів та паперу у місті Миколаїв. Ми пишаємося своїм досвідом роботи з оптовими, роздрібними та корпоративними клієнтами і завжди готові запропонувати якісні товари та високий рівень сервісу. `,
+   'Наш асортимент включає широкий вибір канцелярських товарів, паперу, зошитів, папок, ручок, олівців та багато іншого. Ми працюємо лише з перевіреними постачальниками і гарантуємо високу якість всіх наших товарів.',
+   'Однією з наших головних переваг є безкоштовна доставка замовлень на суму понад 1500 грн у місті Миколаєві. Ми також пропонуємо можливість самовивозу з нашого магазину, що є зручним варіантом для наших місцевих клієнтів.',
+   'Крім великого асортименту продукції та доступних цін, нашім головним пріоритетом є задоволення потреб та очікувань клієнтів. Тому наш персонал складається з професіоналів, які завжди готові надати якісну консультацію та допомогти з вибором товарів.',
+   'Ми розуміємо, що зручність та комфорт клієнта - це один з головних аспектів успішної роботи, тому наш персонал завжди дружелюбний та ввічливий. Ми з радістю відповімо на будь-які ваші запитання та допоможемо з вибором найбільш відповідного товару.',
+   'Наші співробітники проходять регулярні тренінги, щоб бути в курсі всіх новинок ринку та завжди допомагати клієнтам з розумінням та вмінням. Ми завжди раді бачити вас та зробимо все можливе, щоб ваше побажання було виконано.',
+   'Обираючи Буммакс, ви отримуєте не тільки товари високої якості та відмінний сервіс, але й нових друзів та партнерів. Ми завжди раді допомогти та консультувати вас щодо вибору товарів, а також ділитися корисними порадами та ідеями для вашого бізнесу чи дому. Багато наших клієнтів вже стали не просто покупцями, а добрими друзями та постійними партнерами, з якими ми ділимось не тільки товаром, а й позитивною енергією та дружніми стосунками.']},
+   {id:'delivery', title: 'Доставка та оплата', img: 'assets/img_2.jpg', text:
+   ['Замовляючи товари , ви можете бути впевнені, що ваше замовлення буде доставлено швидко та якісно. Ми пропонуємо безкоштовну доставку по місту Миколаєві при замовленні на суму від 1500 грн.',
+    `Наша команда кур'єрів здійснює доставку замовлень щоденно з 10:00 до 17:00 в будні дні (понеділок - п'ятниця). Ми зробимо все можливе, щоб доставити ваше замовлення протягом 1-2 робочих днів з моменту оформлення.`,
+   'Ми приймаємо оплату товарів різними зручними способами, щоб зробити процес покупки максимально комфортним для вас.  Ми гарантуємо безпеку та конфіденційність оплати.',
+   'Вибираючи нас, ви можете бути впевнені, що отримаєте високоякісний сервіс та комфортні умови покупки. Зробіть замовлення прямо зараз та переконайтеся в цьому самі!']},
 
+  ];
+  content_rus:ContentItem[] = [{id:'about', title: 'Про компанию', img: 'assets/img_1.jpg', text:
+  ['Буммакс – это компания, которая уже более 10 лет работает на рынке канцелярских товаров и бумаги в городе Николаев. Мы гордимся своим опытом работы с оптовыми, розничными и корпоративными клиентами, и всегда готовы предложить качественные товары и высокий уровень сервиса.',
+   'Наш ассортимент включает широкий выбор канцелярских товаров, бумаги, тетрадей, папок, ручек, карандашей и многое другое. Мы работаем только с проверенными поставщиками и гарантируем высокое качество всех товаров.',
+   'Одним из наших главных преимуществ является бесплатная доставка заказов на сумму более 1500 грн в Николаеве. Мы также предлагаем возможность вывоза из нашего магазина, что является удобным вариантом для наших местных клиентов.',
+  'Помимо большого ассортимента продукции и доступных цен нашим главным приоритетом является удовлетворение потребностей и ожиданий клиентов. Поэтому наш персонал состоит из профессионалов, всегда готовых предоставить качественную консультацию и помочь с выбором товаров.',
+  'Мы понимаем, что удобство и комфорт клиента – это один из главных аспектов успешной работы, поэтому наш персонал всегда дружелюбен и вежлив. Мы с радостью ответим на любые вопросы и поможем с выбором наиболее подходящего товара.',
+  'Наши сотрудники проходят регулярные тренинги, чтобы быть в курсе всех новинок рынка и всегда помогать клиентам с пониманием и умением. Мы всегда рады видеть вас и сделаем все возможное, чтобы ваше пожелание было выполнено.',
+  'Выбирая Буммакс, вы получаете не только товары высокого качества и отличный сервис, но и новых друзей и партнеров. Мы всегда рады помочь и консультировать вас по выбору товаров, а также делиться полезными советами и идеями для вашего бизнеса или дома. Многие наши клиенты уже стали не просто покупателями, а хорошими друзьями и постоянными партнерами, с которыми мы делимся не только товаром, но и положительной энергией и дружескими отношениями.']},
+  {id:'delivery', title: 'Доставка и оплата', img: 'assets/img_2.jpg', text:
+  ['Заказывая товары, вы можете быть уверены, что ваш заказ будет доставлен быстро и качественно. Мы предлагаем бесплатную доставку по городу при заказе на сумму от 1500 грн.',
+  'Наша команда курьеров осуществляет доставку заказов ежедневно с 10:00 до 17:00 в будние дни (понедельник – пятница). Мы сделаем все возможное, чтобы доставить заказ в течение 1-2 рабочих дней с момента оформления.',
+  'Мы принимаем оплату товаров разными удобными способами, чтобы сделать процесс покупки максимально комфортным для вас. Мы гарантируем безопасность и конфиденциальность оплаты.',
+  'Выбирая нас, вы можете быть уверены, что получите высококачественный сервис и удобные условия покупки. Сделайте заказ прямо сейчас и убедитесь в этом сами!']}];
+
+  news: New = {id:'news', newName:'Новини', articles: [{title: 'Відкриття магазину', text:
+  ['Магазин канцтоварів "Клякса" відновлює свою роботу!',
+  'Після того, як магазин "Клякса" зачинив свої двері 24 лютого 2022 року, мешканці нашого міста залишилися без свого улюбленого магазину. Однак, ми раді повідомити, що "Клякса" готується відчинити свої двері знову!',
+  `Наш магазин працюватиме за попереднім графіком, з понеділка до п'ятниці, з 9:00 до 17:00 У магазині ви знайдете широкий вибір канцелярських товарів високої якості: від олівців та ручок до паперу та дощок.`,
+  `Ми дбаємо про здоров'я та безпеку наших клієнтів та персоналу, тому в нашому магазині діють усі необхідні запобіжні заходи. Ми стежимо за чистотою та санітарними умовами у приміщенні, а також регулярно проводимо дезінфекцію.`,
+  'Крім того, ми також пропонуємо зручний онлайн-магазин для тих, хто вважає за краще купувати канцелярські товари з дому. Замовлення можна оформляти на нашому сайті цілодобово.',
+  'Ми чекаємо на вас у магазині "Клякса", щоб надати вам широкий вибір якісних канцелярських товарів та допомогти вам втілити в життя ваші творчі ідеї!'],
+  links:[{linkName:'Каталог товарів можна переглянути тут', url:'#'}],
+  img: 'assets/img_3.jpg'}],
+ }
+
+ news_rus: New = {id:'news', newName:'Новости', articles: [{title: 'Открытие магазина', text:
+ ['Магазин канцтоваров "Клякса" возобновляет свою работу!',
+ 'После того, как магазин "Клякса" закрыл свои двери 24 февраля 2022 года, жители нашего города остались без своего любимого магазина. Однако, мы рады сообщить, что "Клякса" готовится открыть свои двери снова!',
+ 'Наш магазин будет работать по прежнему графику, с понедельника по пятницу, с 9:00 до 17:00 В магазине вы найдете широкий выбор канцелярских товаров высокого качества: от карандашей и ручек до бумаги и досок.',
+ 'Мы заботимся о здоровье и безопасности наших клиентов и персонала, поэтому в нашем магазине действуют все необходимые меры предосторожности. Мы следим за чистотой и санитарными условиями в помещении, а также регулярно проводим дезинфекцию.',
+ 'Кроме того, мы также предлагаем удобный онлайн-магазин для тех, кто предпочитает покупать канцелярские товары из дома. Заказы можно оформлять на нашем сайте круглосуточно.',
+ 'Мы ждем вас в магазине "Клякса", чтобы предоставить вам широкий выбор качественных канцелярских товаров и помочь вам воплотить в жизнь ваши творческие идеи!'],
+ links:[{linkName:'Каталог товаров можно просмотреть тут', url:'#'}],
+ img: 'assets/img_3.jpg'}],
+}
+news_ukr: New = {id:'news', newName:'Новини', articles: [{title: 'Відкриття магазину', text:
+['Магазин канцтоварів "Клякса" відновлює свою роботу!',
+'Після того, як магазин "Клякса" зачинив свої двері 24 лютого 2022 року, мешканці нашого міста залишилися без свого улюбленого магазину. Однак, ми раді повідомити, що "Клякса" готується відчинити свої двері знову!',
+`Наш магазин працюватиме за попереднім графіком, з понеділка до п'ятниці, з 9:00 до 17:00 У магазині ви знайдете широкий вибір канцелярських товарів високої якості: від олівців та ручок до паперу та дощок.`,
+`Ми дбаємо про здоров'я та безпеку наших клієнтів та персоналу, тому в нашому магазині діють усі необхідні запобіжні заходи. Ми стежимо за чистотою та санітарними умовами у приміщенні, а також регулярно проводимо дезінфекцію.`,
+'Крім того, ми також пропонуємо зручний онлайн-магазин для тих, хто вважає за краще купувати канцелярські товари з дому. Замовлення можна оформляти на нашому сайті цілодобово.',
+'Ми чекаємо на вас у магазині "Клякса", щоб надати вам широкий вибір якісних канцелярських товарів та допомогти вам втілити в життя ваші творчі ідеї!'],
+links:[{linkName:'Каталог товарів можна переглянути тут', url:'#'}],
+img: 'assets/img_3.jpg'}],
+}
+
+  allPhones: string[] = ['(0512) 70-94-64',
+  '(0512) 58-55-85',
+  '(0512) 70-95-85',
+  '(067) 512-33-08']
+
+  contactsAddress:ContentItem = {id:'contacts', title: 'Контакти та адреса', img: 'assets/img_4.jpg', text:
+  [`Якщо у вас є питання, пропозиції або зауваження, ви можете зв'язатися з нами за вказаними контактними телефонами в робочий час, з понеділка по п'ятницю, з 9 ранку до 5 вечора або надіслати лист електронною поштою.`,
+  'Ми знаходимося за двома адресами: на вулиці Херсонське Шосе, 51 та на вулиці Маріупольська, 44к.8. Наші співробітники готові відповісти на ваші запитання та допомогти вам у вирішенні будь-яких проблем.',
+  'Будемо раді бачити вас у нашому офісі або почути ваш голос по телефону!'
+  ]}
+  contactsAddress_ukr:ContentItem = {id:'contacts', title: 'Контакти та адреса', img: 'assets/img_4.jpg', text:
+  [`Якщо у вас є питання, пропозиції або зауваження, ви можете зв'язатися з нами за вказаними контактними телефонами в робочий час, з понеділка по п'ятницю, з 9 ранку до 5 вечора або надіслати лист електронною поштою.`,
+  'Ми знаходимося за двома адресами: на вулиці Херсонське Шосе, 51 та на вулиці Маріупольська, 44к.8. Наші співробітники готові відповісти на ваші запитання та допомогти вам у вирішенні будь-яких проблем.',
+  'Будемо раді бачити вас у нашому офісі або почути ваш голос по телефону!'
+  ]}
+  contactsAddress_rus:ContentItem = {id:'contacts', title: 'Контакты и адрес', img: 'assets/img_4.jpg', text:
+  ['Если у вас есть какие-либо вопросы, предложения или замечания, вы можете связаться с нами по указанным контактным телефонам в рабочее время, с понедельника по пятницу, с 9 утра до 5 вечера или прислать письмо электронной почтой',
+  'Мы находимся по двум адресам: на улице Херсонское Шоссе, 51 и на улице Мариупольская, 44к.8. Наши сотрудники готовы ответить на ваши вопросы и помочь вам в решении любых проблем.',
+  'Будем рады видеть вас у нас в офисе или услышать ваш голос по телефону!'
+]}
   footerContent:{title:string, content:string[]}[] = [
-    {title: 'Контактна інформація', content: ['063-226-22-83', '099-487-39-85']},
-    {title: 'Електронна пошта', content: ['bummaks.bumaga@gmail.com']}];
+    {title: 'Контактна інформація', content: ['(067) 512-33-08', '(0512) 70-95-85']},
+    {title: 'Електронна пошта', content: ['bummaks.bumaga@gmail.com']},
+    {title: 'Адреса', content:this.address}];
   footerContent_ukr:{title:string, content:string[]}[] = [
-    {title: 'Контактна інформація', content: ['063-226-22-83', '099-487-39-85']},
-    {title: 'Електронна пошта', content: ['bummaks.bumaga@gmail.com']}];
+    {title: 'Контактна інформація', content: ['(067) 512-33-08', '(0512) 70-95-85']},
+    {title: 'Електронна пошта', content: ['bummaks.bumaga@gmail.com']},
+    {title: 'Адреса', content:this.address_ukr}];
   footerContent_rus:{title:string, content:string[]}[] = [
-    {title: 'Контактная информация', content: ['063-226-22-83', '099-487-39-85']},
-    {title: 'Електронная почта', content: ['bummaks.bumaga@gmail.com']}];
+    {title: 'Контактная информация', content: ['(067) 512-33-08', '(0512) 70-95-85']},
+    {title: 'Електронная почта', content: ['bummaks.bumaga@gmail.com']},
+    {title: 'Адрес', content:this.address_rus}];
 
-  stationaryTitle: string = 'Канцелярські товари';
-  stationaryTitle_ukr: string = 'Канцелярські товари';
-  stationaryTitle_rus: string = 'Канцелярские товары';
+  stationaryTitle: string = 'Канцелярські товари для дому та офісу';
+  stationaryTitle_ukr: string = 'Канцелярські товари для дому та офісу ';
+  stationaryTitle_rus: string = 'Канцелярские товары для дома и офиса';
 
-  img:string[] = ['https://media.vogue.co.uk/photos/5d54c5f9ea036300081943ce/master/pass/original',
-  'https://chrisbeon.co.uk/wp-content/uploads/2014/04/shutterstock_264955139.jpg',
-  'https://www.creativeboom.com/uploads/articles/28/28d3817667e3363f0472b183ca74eaf310649b47_810.jpg',
-  'https://cdn.shopify.com/s/files/1/0602/2617/5224/articles/image8_0e5ccd35-70e5-493b-8bec-4d1c6867cad4_1200x1200.png?v=1667261152'
-  ]
+  twoPhones: string[] = ['(067) 512-33-08', '(0512) 70-95-85'];
+  email: string = 'bummaks.bumaga@gmail.com';
+
 
   changeLg(language:string){
     if (language==='UKR'){
@@ -59,6 +147,9 @@ export class TextLgService {
       this.stationaryTitle = this.stationaryTitle_ukr;
       this.catalogName = this.catalogName_ukr;
       this.findUs = this.findUs_ukr;
+      this.address = this.address_ukr;
+      this.contactsAddress = this.contactsAddress_ukr;
+      this.news = this.news_ukr;
     } else if (language==='RUS'){
       this.language = this.language_rus;
       this.content = this.content_rus;
@@ -66,6 +157,9 @@ export class TextLgService {
       this.stationaryTitle = this.stationaryTitle_rus;
       this.catalogName = this.catalogName_rus;
       this.findUs = this.findUs_rus;
+      this.address = this.address_rus;
+      this.contactsAddress = this.contactsAddress_rus;
+      this.news = this.news_rus;
     }
   }
 

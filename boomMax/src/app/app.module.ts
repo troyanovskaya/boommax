@@ -11,7 +11,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SliderComponent } from './components/slider/slider.component';
 import { ContentComponent } from './components/content/content.component';
 import { ContentListComponent } from './components/content-list/content-list.component';
-import { MapBlockComponent } from './components/map-block/map-block.component';
+import { MapBlockComponent } from './components/content/contacts/map-block/map-block.component';
+import { ContactsComponent } from './components/content/contacts/contacts.component';
+import { NewsComponent } from './components/content/news/news.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +25,9 @@ import { MapBlockComponent } from './components/map-block/map-block.component';
     SliderComponent,
     ContentComponent,
     ContentListComponent,
-    MapBlockComponent
+    MapBlockComponent,
+    ContactsComponent,
+    NewsComponent
   ],
   imports: [
     AppRoutingModule,
