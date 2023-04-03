@@ -4,3 +4,5 @@ export interface ContentItem {
   img: string,
   text: string[]
 }
+
+

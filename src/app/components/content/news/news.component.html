@@ -1,13 +1,13 @@
-<div class="content-container">
+<div id="news" class="content-container">
   <div class="main-content">
     <h4 >{{textService.news.newName}}</h4>
-    <div id="news" *ngFor="let article of textService.news.articles; let i = index">
-      <h3 >{{article.title}}</h3>
+    <div  *ngFor="let article of textService.news.articles; let i = index">
       <div class="text-img">
         <div class="text">
           <div class="img">
             <img src="{{article.img}}" alt="img {{4}}">
           </div>
+          <h3 >{{article.title}}</h3>
           <div *ngFor="let p1 of article.text">
             <p>{{p1}}</p>
           </div>

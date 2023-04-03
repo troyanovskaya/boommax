@@ -1,30 +1,22 @@
 .content-container
-  .main-content
-    display: flex
-    flex-direction: column
-    gap: 100px
-  .text-img
+  .item-container
     display: flex
     flex-direction: row
-    gap: 40px
-    .img, img
-      float: left
-      margin: 0px 30px 20px 0px
-    .img
-      width: 33%
-    img
-      width: 100%
-    .text
-      float: right
+    flex-wrap: wrap
+    .item
+      width: 40%
+      margin-right: 75px
+  app-map-block
+    width: 100%
 
-
-  p
-    font-size: 2.1em
+  p, li, a
+    font-size: 25px
     line-height: 1.2em
     text-indent: 20px
   h4
-    font-size: 2.3em
+    font-size: 40px
     margin: 30px 0px
+    color: #164229
   h3
     font-size: 2.3em
     margin: 30px 0px
@@ -33,9 +25,40 @@
     text-decoration: none
     color: black
     line-height: 30px
+#contacts
+  scroll-margin-top: 100px
+ul
+  list-style: none
+  padding: 0px
+  li::before
+    content: "\2022"
+    color: #ef7f1b
+    font-weight: bold
+    display: inline-block
+    width: 1.8em
+    margin-left: -1em
+.list
+  display: flex
+  flex-direction: column
+  a::before
+    content: "\2022"
+    color: #ef7f1b
+    font-weight: bold
+    display: inline-block
+    width: 1.8em
+    margin-left: -1em
 
-@media only screen and (max-width: 1100px)
-  .content-container
-    .text-img
-      .img
-        width: 100%
+@media only screen and (max-width: 1120px)
+  .content-container .item-container
+    justify-content: center
+    flex-direction: column
+    .item
+      margin-right: 0px
+      width: 60%
+      display: block
+      margin: 0px auto
+
+@media only screen and (max-width: 765px)
+  .content-container .item-container .item
+    width: 80%
+
