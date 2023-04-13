@@ -3,6 +3,7 @@ export interface Link{
   url: string
 }
 export interface Article{
+  id: number,
   title: string,
   text: string[],
   links: Link[],

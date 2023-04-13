@@ -1,0 +1,95 @@
+.back
+  width: 100%
+  background-color: #164229
+  box-sizing: border-box
+  height: 55px
+  display: flex
+  align-items: center
+  position: sticky
+  top: 0
+  z-index: 2
+  padding: 5px
+  .arrow
+    width: 40px
+    height: 40px
+    border: 2px solid white
+    border-radius: 10px
+
+  .arrow-container
+    margin-left: 45px
+    display: flex
+    align-items: center
+    cursor: pointer
+    margin-top: 10px
+    margin-bottom: 10px
+
+
+.content-container
+  margin:40px 5%
+  margin-bottom: 50px
+  .news-wrapper
+    display: flex
+    flex-direction: column
+    gap: 50px
+  .main-content
+    display: flex
+    flex-direction: column
+  .text-img
+    display: flex
+    flex-direction: row
+    gap: 40px
+    .img, img
+      float: left
+      margin: 0px 30px 20px 0px
+    .img
+      width: 33%
+    img
+      width: 100%
+    .text
+      float: right
+
+
+
+  p
+    font-size: 25px
+    line-height: 1.2em
+    text-indent: 20px
+  h4
+    font-size: 40px
+    margin: 30px 0px
+    color: #164229
+    line-height: 40px
+  h3
+    font-size: 36px
+    line-height: 36px
+    margin: 0px 30px 30px 30px
+    text-indent: 20px
+    font-style: italic
+  a
+    text-decoration: none
+    color: #164229
+    line-height: 30px
+    font-size: 25px
+    &:hover
+      text-decoration: underline
+
+
+@media only screen and (max-width: 1100px)
+  .content-container
+    .text-img
+      overflow: hidden
+      .text
+        display: flex
+        flex-direction: column
+        justify-content: center
+      .img
+
+        width: 70%
+        position: relative
+        left: 50%
+        img
+          position: relative
+          left: -50%
+    h3
+      width: 100%
+

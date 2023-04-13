@@ -1,8 +1,9 @@
 .content-container
-  margin-top: 100px
+  margin:40px 5%
   .main-content
     display: flex
     flex-direction: column
+    gap: 50px
   .text-img
     display: flex
     flex-direction: row
@@ -26,23 +27,30 @@
     font-size: 40px
     margin: 30px 0px
     color: #164229
-  h3
-    font-size: 36px
-    margin: 0px 30px 30px 30px
-    text-indent: 20px
-  a
-    text-decoration: none
-    color: #164229
-    line-height: 30px
-    font-size: 1.3em
-    &:hover
-      text-decoration: underline
+    line-height: 40px
+#about, #delivery
+  scroll-margin-top: 50px
 
-#news
-  scroll-margin-top: 100px
+.contacts-news
+  display: flex
+  flex-direction: column
+  gap: 50px
 
 @media only screen and (max-width: 1100px)
   .content-container
     .text-img
+      overflow: hidden
+      .text
+        display: flex
+        flex-direction: column
+        justify-content: center
       .img
-        width: 100%
+
+        width: 70%
+        position: relative
+        left: 50%
+        img
+          position: relative
+          left: -50%
+    h3
+      width: 100%

@@ -9,11 +9,13 @@ import { LanguageComponent } from './components/lg-panel/language/language.compo
 import { FooterComponent } from './components/footer/footer.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SliderComponent } from './components/slider/slider.component';
-import { ContentComponent } from './components/content/content.component';
-import { ContentListComponent } from './components/content-list/content-list.component';
-import { MapBlockComponent } from './components/content/contacts/map-block/map-block.component';
-import { ContactsComponent } from './components/content/contacts/contacts.component';
-import { NewsComponent } from './components/content/news/news.component';
+import { ContentComponent } from './components/home-page/content/content.component';
+import { ContentListComponent } from './components/home-page/content-list/content-list.component';
+import { MapBlockComponent } from './components/home-page/content/contacts/map-block/map-block.component';
+import { ContactsComponent } from './components/home-page/content/contacts/contacts.component';
+import { NewsComponent } from './components/home-page/content/news/news.component';
+import { HomePageComponent } from './components/home-page/home-page.component';
+import { NewsPageComponent } from './components/news-page/news-page.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +29,9 @@ import { NewsComponent } from './components/content/news/news.component';
     ContentListComponent,
     MapBlockComponent,
     ContactsComponent,
-    NewsComponent
+    NewsComponent,
+    HomePageComponent,
+    NewsPageComponent
   ],
   imports: [
     AppRoutingModule,

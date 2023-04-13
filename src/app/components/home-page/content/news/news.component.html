@@ -1,0 +1,24 @@
+<div id="news" class="content-container">
+  <div class="main-content">
+    <h4 >{{textService.news.newName}}</h4>
+    <div class="news-wrapper">
+      <div  *ngFor="let article of textService.news.articles; let i = index">
+        <div class="text-img">
+          <div class="text">
+            <div class="img">
+              <img src="{{article.img}}" alt="img {{4}}">
+            </div>
+            <h3 routerLink="/news">{{article.title}}</h3>
+            <div *ngFor="let p1 of article.text; let ind = index">
+              <p *ngIf="ind<=1">{{p1}}</p>
+            </div>
+            <div *ngFor="let link of article.links">
+              <p><a href="{{link.url}}">{{link.linkName}}</a></p>
+            </div>
+            <div routerLink="/news" class="more">{{textService.more}}</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

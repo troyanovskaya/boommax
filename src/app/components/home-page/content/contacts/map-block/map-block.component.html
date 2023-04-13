@@ -4,8 +4,5 @@
   <iframe *ngIf="pickedAddressI==1" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2722.815865340357!2d31.989043015804437!3d46.96530774004921!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40c5c96406a197b1%3A0xca8680826394f952!2z0YPQuy4g0JzQvtGB0LrQvtCy0YHQutCw0Y8sIDQ0LCDQndC40LrQvtC70LDQtdCyLCDQndC40LrQvtC70LDQtdCy0YHQutCw0Y8g0L7QsdC70LDRgdGC0YwsINCj0LrRgNCw0LjQvdCwLCA1NDAwMA!5e0!3m2!1sru!2snl!4v1678746857913!5m2!1sru!2snl" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
   <div class="info-block">
     <p (click)="changeAddress(i)" [ngClass]="{'picked-address': i == pickedAddressI}" class="address"  *ngFor="let a of textService.address; let i = index">{{a}}</p>
-    <a href="tel:{{p}}" *ngFor="let p of textService.twoPhones">{{p}}</a>
-    <p>{{textService.email}}</p>
-    <a href="#">{{textService.catalogName}}</a>
   </div>
 </div>

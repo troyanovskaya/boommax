@@ -8,12 +8,17 @@
   flex-direction: row
   flex-wrap: wrap
   justify-content: space-between
-  align-items: center
-  app-logo
-    margin-left: 40px
-    margin-top: 20px
-  app-language
-    margin-right: 40px
+  .logo-lg
+    width:100%
+    display: flex
+    flex-direction: row
+    justify-content: space-between
+    align-items: center
+    app-logo
+      margin-left: 40px
+      margin-top: 20px
+    app-language
+      margin-right: 40px
   .label-phone-container
     width:100%
     display: flex
@@ -30,6 +35,7 @@
     a
       text-decoration: none
       color: white
+      line-height: 45px
     p
       width:30%
       line-height: 45px
@@ -39,3 +45,22 @@
 @media only screen and (max-width: 1370px)
   .lg-container .label-phone-container p
     width:50%
+@media only screen and (max-width: 660px)
+  .lg-container .label-phone-container p
+    width:100%
+@media only screen and (max-width: 590px)
+  .lg-container
+    .label-phone-container
+      margin: 0px
+      padding: 20px 0px
+    .logo-lg
+      margin: 0px
+      display: flex
+      flex-direction: column
+      justify-content: center
+      align-items: center
+      gap: 20px
+      app-language
+        margin-right: 0px
+      app-logo
+        margin-left: 0px

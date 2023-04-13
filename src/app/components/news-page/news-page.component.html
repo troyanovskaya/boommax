@@ -1,0 +1,27 @@
+<div class="back">
+  <div routerLink="/" class="arrow-container"><img class="arrow" src="assets/arrow.png" alt="arrow"></div>
+</div>
+<div class="content-container">
+  <div class="main-content">
+    <h4 >{{textService.news.newName}}</h4>
+    <div class="news-wrapper">
+      <div routerLink="/news"  *ngFor="let article of textService.news.articles; let i = index">
+        <div class="text-img">
+          <div class="text">
+            <div class="img">
+              <img src="{{article.img}}" alt="img {{4}}">
+            </div>
+            <h3 >{{article.title}}</h3>
+            <div *ngFor="let p1 of article.text; let ind = index">
+              <p>{{p1}}</p>
+            </div>
+            <div *ngFor="let link of article.links">
+              <p><a href="{{link.url}}">{{link.linkName}}</a></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { TextLgService } from 'src/app/services/text-lg.service';
 
+
 @Component({
   selector: 'app-content-list',
   templateUrl: './content-list.component.html',
@@ -14,7 +15,7 @@ export class ContentListComponent implements OnInit{
 
 
   constructor(public textService: TextLgService){}
-  ngOnInit(): void {
-  }
+  ngOnInit() {
+}
 
 }

@@ -12,31 +12,34 @@
   p, li, a
     font-size: 25px
     line-height: 1.2em
-    text-indent: 20px
+    text-indent: 5px
   h4
     font-size: 40px
     margin: 30px 0px
+    line-height: 40px
     color: #164229
   h3
-    font-size: 2.3em
+    font-size: 36px
+    line-height: 30px
     margin: 30px 0px
     font-style: italic
   a
     text-decoration: none
     color: black
     line-height: 30px
+    word-break: break-all
 #contacts
-  scroll-margin-top: 100px
+  scroll-margin-top: 70px
 ul
   list-style: none
   padding: 0px
   li::before
     content: "\2022"
     color: #ef7f1b
-    font-weight: bold
     display: inline-block
     width: 1.8em
     margin-left: -1em
+
 .list
   display: flex
   flex-direction: column
@@ -61,4 +64,7 @@ ul
 @media only screen and (max-width: 765px)
   .content-container .item-container .item
     width: 80%
+@media only screen and (max-width: 305px)
+  .content-container .item-container .item
+    width: 90%
 
